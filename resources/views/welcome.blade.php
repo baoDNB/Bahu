@@ -11,19 +11,7 @@
         <script src="https://cdn.tailwindcss.com"></script>
     </head>
     <body class="bg-[#f3f4f6] text-[#1b1b18] antialiased flex items-center justify-center min-h-screen p-6">
-        @if (Route::has('login'))
-            <div class="fixed top-0 right-0 p-6 text-right z-10">
-                @auth
-                    <a href="{{ url('/dashboard') }}" class="font-semibold text-gray-600 hover:text-indigo-600 focus:outline focus:outline-2 focus:rounded-sm focus:outline-indigo-500">Bảng điều khiển</a>
-                @else
-                    <a href="{{ route('login') }}" class="font-semibold text-gray-600 hover:text-indigo-600 focus:outline focus:outline-2 focus:rounded-sm focus:outline-indigo-500">Đăng nhập</a>
-
-                    @if (Route::has('register'))
-                        <a href="{{ route('register') }}" class="ml-4 font-semibold text-gray-600 hover:text-indigo-600 focus:outline focus:outline-2 focus:rounded-sm focus:outline-indigo-500">Đăng ký</a>
-                    @endif
-                @endauth
-            </div>
-        @endif
+        
         <div class="w-full max-w-[450px] bg-white border border-gray-200 rounded-3xl shadow-xl p-10">
             <header class="text-center mb-10">
                 <div class="inline-block p-3 bg-indigo-100 rounded-2xl mb-4">
