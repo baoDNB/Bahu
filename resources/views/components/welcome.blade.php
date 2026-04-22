@@ -1,17 +1,6 @@
-<!DOCTYPE html>
-<html lang="vi">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Rút gọn URL</title>
-
-        <link rel="preconnect" href="https://fonts.bunny.net">
-        <link href="https://fonts.bunny.net/css?family=instrument-sans:400,500,600" rel="stylesheet" />
-
-        <script src="https://cdn.tailwindcss.com"></script>
-    </head>
-    <body class="bg-[#f3f4f6] text-[#1b1b18] antialiased flex items-center justify-center min-h-screen p-6">
-        
+<x-layout title="Rút gọn URL">
+    <x-slot name="title">Rút gọn URL - Bahu</x-slot>
+    <div class="flex justify-center">
         <div class="w-full max-w-[450px] bg-white border border-gray-200 rounded-3xl shadow-xl p-10">
             <header class="text-center mb-10">
                 <div class="inline-block p-3 bg-indigo-100 rounded-2xl mb-4">
@@ -35,7 +24,6 @@
                 </button>
             </form>
 
-            {{-- Hiển thị kết quả khi có link --}}
             @if(session('short_url'))
                 <div class="mt-10 p-5 bg-green-50 border border-green-100 rounded-2xl animate-bounce-short">
                     <p class="text-[10px] font-bold text-green-600 uppercase tracking-[0.1em] mb-2">Thành công! Link của bạn:</p>
@@ -51,6 +39,5 @@
                 </div>
             @endif
         </div>
-
-    </body>
-</html>
+    </div>
+</x-layout>

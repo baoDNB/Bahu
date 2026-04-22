@@ -41,4 +41,11 @@ class UrlController extends Controller
 
         return redirect()->away($url->original_url);
     }
+
+    public function index()
+    {
+        $urls = auth()->user()->urls()->latest()->get();
+
+        return view('components.links', compact('urls'));
+    }
 }
