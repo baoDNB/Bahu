@@ -20,6 +20,7 @@ class UrlService
         return DB::transaction(function () use ($originalUrl) {
 
             $urlRecord = Url::create([
+                'user_id' => auth()->id(),
                 'original_url' => $originalUrl,
                 'short_code'   => '', 
             ]);

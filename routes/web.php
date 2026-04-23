@@ -18,6 +18,8 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/links', [UrlController::class, 'index'])->middleware('auth')->name('links');
-
+Route::get('/links/{id}/history', [UrlController::class, 'history'])
+    ->middleware('auth')
+    ->name('urls.history');
 Route::post('/shorten', [UrlController::class, 'store'])->name('url.shorten');
 Route::get('/{code}', [UrlController::class, 'redirect'])->name('url.redirect');

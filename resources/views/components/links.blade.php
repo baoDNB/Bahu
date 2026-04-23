@@ -17,7 +17,7 @@
                                     <th>Short URL</th>
                                     <th>URL gốc</th>
                                     <th class="text-right">Lượt click</th>
-                                </tr>
+                                    <th class="text-center">Lịch sử</th> </tr>
                             </thead>
                             <tbody>
                                 @foreach($urls as $url)
@@ -27,10 +27,18 @@
                                                 {{ url($url->short_code) }}
                                             </a>
                                         </td>
-                                        <td class="max-w-[420px] truncate" title="{{ $url->original_url }}">
+                                        <td class="max-w-[300px] truncate" title="{{ $url->original_url }}">
                                             {{ $url->original_url }}
                                         </td>
                                         <td class="text-right font-semibold">{{ $url->visits }}</td>
+                                        <td class="text-center">
+                                            <a href="{{ route('urls.history', $url->id) }}" class="btn btn-ghost btn-xs text-info">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                                </svg>
+                                                Xem chi tiết
+                                            </a>
+                                        </td>
                                     </tr>
                                 @endforeach
                             </tbody>

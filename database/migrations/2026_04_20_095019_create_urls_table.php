@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('user_id')->nullable()->constrained()->nullOnDelete();
             $table->text('original_url');
             $table->string('short_code')->unique()->nullable();
-            $table->integer('visits')->default(0);
+            $table->unsignedInteger('visits')->default(0);
             $table->timestamps();
         });
     }
